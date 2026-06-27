@@ -7,5 +7,6 @@ additionalProperties:
   packageCompany: Kavenio
   packageAuthors: Kavenio
   packageDescription: Kavenio API SDK for .NET
+  packageGuid: "{E12DCE68-63F2-42DF-AE76-1FF90E02EFE7}"
   targetFramework: net8.0
   disallowAdditionalPropertiesIfNotPresent: false

@@ -1,0 +1,13 @@
+{
+  "name": "@kavenio/dotnet-sdk-repo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "verify": "node scripts/verify.mjs",
+    "pack:dry-run": "echo Publishing is configured in the language registry workflow before release."
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "2.39.0"
+  }
+}

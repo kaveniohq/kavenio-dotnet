@@ -1,0 +1,11 @@
+generatorName: csharp
+inputSpec: openapi/openapi.json
+outputDir: generated/dotnet
+packageName: Kavenio.Sdk
+additionalProperties:
+  packageName: Kavenio.Sdk
+  packageCompany: Kavenio
+  packageAuthors: Kavenio
+  packageDescription: Kavenio API SDK for .NET
+  targetFramework: net8.0
+  disallowAdditionalPropertiesIfNotPresent: false

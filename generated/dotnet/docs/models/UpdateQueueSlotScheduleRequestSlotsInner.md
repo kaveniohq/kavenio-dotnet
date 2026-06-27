@@ -1,0 +1,13 @@
+# Kavenio.Sdk.Model.UpdateQueueSlotScheduleRequestSlotsInner
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**DayOfWeek** | **int** |  | 
+**Time** | **string** |  | 
+**Timezone** | **string** |  | 
+**Active** | **bool** |  | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+

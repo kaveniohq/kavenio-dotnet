@@ -1,0 +1,9 @@
+node_modules/
+.npm-cache/
+.openapi-generator/
+.openapi-generator-ignore
+
+generated/*/node_modules/
+generated/*/target/
+generated/*/build/
+generated/*/__pycache__/

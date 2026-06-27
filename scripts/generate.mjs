@@ -121,6 +121,10 @@ function fixDotnetDateTimeValidation() {
       /regex([A-Za-z0-9_]+)\.Match\(this\.([A-Za-z0-9_]+)Option\.Value\)/g,
       "regex$1.Match(this.$2Option.Value.ToString())",
     ],
+    [
+      /regex(ScheduledFor|CreatedAt|UpdatedAt)\.Match\(this\.(ScheduledFor|CreatedAt|UpdatedAt)\)/g,
+      "regex$1.Match(this.$2.ToString())",
+    ],
   ]);
 }
 

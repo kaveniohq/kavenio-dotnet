@@ -145,7 +145,7 @@ namespace Kavenio.Sdk.Model
                 // ProfileId (string) pattern
                 Regex regexProfileId = new Regex(@"^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]{16}$", RegexOptions.CultureInvariant);
 
-                if (this.ProfileIdOption.Value != null &&!regexProfileId.Match(this.ProfileIdOption.Value).Success)
+                if (this.ProfileIdOption.Value != null &&!regexProfileId.Match(this.ProfileIdOption.Value.ToString()).Success)
                 {
                     yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ProfileId, must match a pattern of " + regexProfileId, new [] { "ProfileId" });
                 }

@@ -124,7 +124,7 @@ namespace Kavenio.Sdk.Model
                 // Country (string) pattern
                 Regex regexCountry = new Regex(@"^[A-Z]{2}$", RegexOptions.CultureInvariant);
 
-                if (this.CountryOption.Value != null &&!regexCountry.Match(this.CountryOption.Value).Success)
+                if (this.CountryOption.Value != null &&!regexCountry.Match(this.CountryOption.Value.ToString()).Success)
                 {
                     yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Country, must match a pattern of " + regexCountry, new [] { "Country" });
                 }

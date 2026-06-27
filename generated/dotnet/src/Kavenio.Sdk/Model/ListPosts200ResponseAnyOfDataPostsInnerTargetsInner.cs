@@ -679,7 +679,7 @@ namespace Kavenio.Sdk.Model
                 // AccountId (string) pattern
                 Regex regexAccountId = new Regex(@"^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]{16}$", RegexOptions.CultureInvariant);
 
-                if (this.AccountIdOption.Value != null &&!regexAccountId.Match(this.AccountIdOption.Value).Success)
+                if (this.AccountIdOption.Value != null &&!regexAccountId.Match(this.AccountIdOption.Value.ToString()).Success)
                 {
                     yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AccountId, must match a pattern of " + regexAccountId, new [] { "AccountId" });
                 }
@@ -689,7 +689,7 @@ namespace Kavenio.Sdk.Model
                 // ScheduledFor (DateTime) pattern
                 Regex regexScheduledFor = new Regex(@"^(?:(?:\d\d[2468][048]|\d\d[13579][26]|\d\d0[48]|[02468][048]00|[13579][26]00)-02-29|\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\d|30)|(?:02)-(?:0[1-9]|1\d|2[0-8])))T(?:(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d+)?)?(?:Z))$", RegexOptions.CultureInvariant);
 
-                if (this.ScheduledForOption.Value != null &&!regexScheduledFor.Match(this.ScheduledForOption.Value).Success)
+                if (this.ScheduledForOption.Value != null &&!regexScheduledFor.Match(this.ScheduledForOption.Value.ToString()).Success)
                 {
                     yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ScheduledFor, must match a pattern of " + regexScheduledFor, new [] { "ScheduledFor" });
                 }

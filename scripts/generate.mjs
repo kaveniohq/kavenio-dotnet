@@ -1,9 +1,11 @@
 import {
+  readdirSync,
   copyFileSync,
   existsSync,
   mkdirSync,
   readFileSync,
   rmSync,
+  statSync,
   writeFileSync,
 } from "node:fs";
 import { spawnSync } from "node:child_process";
@@ -54,6 +56,7 @@ if (language === "node") {
 
 if (language === "dotnet") {
   fixDotnetMetadata();
+  fixDotnetDateTimeValidation();
 }
 
 function copyNodeOverlay() {
@@ -110,6 +113,39 @@ function copyNodeOverlay() {
     `${JSON.stringify(packageJson, null, 2)}\n`,
     "utf8",
   );
+}
+
+function fixDotnetDateTimeValidation() {
+  replaceInFiles("generated/dotnet/src/Kavenio.Sdk/Model", ".cs", [
+    [
+      /regex([A-Za-z0-9_]+)\.Match\(this\.([A-Za-z0-9_]+)Option\.Value\)/g,
+      "regex$1.Match(this.$2Option.Value.ToString())",
+    ],
+  ]);
+}
+
+function replaceInFiles(root, extension, replacements) {
+  for (const entry of readdirSync(root)) {
+    const entryPath = `${root}/${entry}`;
+    const stats = statSync(entryPath);
+
+    if (stats.isDirectory()) {
+      replaceInFiles(entryPath, extension, replacements);
+      continue;
+    }
+
+    if (!entryPath.endsWith(extension)) {
+      continue;
+    }
+
+    let content = readFileSync(entryPath, "utf8");
+
+    for (const [search, replacement] of replacements) {
+      content = content.replace(search, replacement);
+    }
+
+    writeFileSync(entryPath, content, "utf8");
+  }
 }
 
 function fixDotnetMetadata() {

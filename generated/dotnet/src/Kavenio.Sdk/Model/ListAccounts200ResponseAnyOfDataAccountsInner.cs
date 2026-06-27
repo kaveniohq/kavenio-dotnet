@@ -895,7 +895,7 @@ namespace Kavenio.Sdk.Model
                 // ParentAccountId (string) pattern
                 Regex regexParentAccountId = new Regex(@"^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]{16}$", RegexOptions.CultureInvariant);
 
-                if (this.ParentAccountIdOption.Value != null &&!regexParentAccountId.Match(this.ParentAccountIdOption.Value).Success)
+                if (this.ParentAccountIdOption.Value != null &&!regexParentAccountId.Match(this.ParentAccountIdOption.Value.ToString()).Success)
                 {
                     yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ParentAccountId, must match a pattern of " + regexParentAccountId, new [] { "ParentAccountId" });
                 }

@@ -430,28 +430,28 @@ namespace Kavenio.Sdk.Model
             // EndsAt (DateTime) pattern
             Regex regexEndsAt = new Regex(@"^(?:(?:\d\d[2468][048]|\d\d[13579][26]|\d\d0[48]|[02468][048]00|[13579][26]00)-02-29|\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\d|30)|(?:02)-(?:0[1-9]|1\d|2[0-8])))T(?:(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d+)?)?(?:Z))$", RegexOptions.CultureInvariant);
 
-            if (this.EndsAtOption.Value != null &&!regexEndsAt.Match(this.EndsAtOption.Value).Success)
+            if (this.EndsAtOption.Value != null &&!regexEndsAt.Match(this.EndsAtOption.Value.ToString()).Success)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EndsAt, must match a pattern of " + regexEndsAt, new [] { "EndsAt" });
             }
             // ExpiresAt (DateTime) pattern
             Regex regexExpiresAt = new Regex(@"^(?:(?:\d\d[2468][048]|\d\d[13579][26]|\d\d0[48]|[02468][048]00|[13579][26]00)-02-29|\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\d|30)|(?:02)-(?:0[1-9]|1\d|2[0-8])))T(?:(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d+)?)?(?:Z))$", RegexOptions.CultureInvariant);
 
-            if (this.ExpiresAtOption.Value != null &&!regexExpiresAt.Match(this.ExpiresAtOption.Value).Success)
+            if (this.ExpiresAtOption.Value != null &&!regexExpiresAt.Match(this.ExpiresAtOption.Value.ToString()).Success)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ExpiresAt, must match a pattern of " + regexExpiresAt, new [] { "ExpiresAt" });
             }
             // Until (DateTime) pattern
             Regex regexUntil = new Regex(@"^(?:(?:\d\d[2468][048]|\d\d[13579][26]|\d\d0[48]|[02468][048]00|[13579][26]00)-02-29|\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\d|30)|(?:02)-(?:0[1-9]|1\d|2[0-8])))T(?:(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d+)?)?(?:Z))$", RegexOptions.CultureInvariant);
 
-            if (this.UntilOption.Value != null &&!regexUntil.Match(this.UntilOption.Value).Success)
+            if (this.UntilOption.Value != null &&!regexUntil.Match(this.UntilOption.Value.ToString()).Success)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Until, must match a pattern of " + regexUntil, new [] { "Until" });
             }
             // EndDate (DateTime) pattern
             Regex regexEndDate = new Regex(@"^(?:(?:\d\d[2468][048]|\d\d[13579][26]|\d\d0[48]|[02468][048]00|[13579][26]00)-02-29|\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\d|30)|(?:02)-(?:0[1-9]|1\d|2[0-8])))T(?:(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d+)?)?(?:Z))$", RegexOptions.CultureInvariant);
 
-            if (this.EndDateOption.Value != null &&!regexEndDate.Match(this.EndDateOption.Value).Success)
+            if (this.EndDateOption.Value != null &&!regexEndDate.Match(this.EndDateOption.Value.ToString()).Success)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EndDate, must match a pattern of " + regexEndDate, new [] { "EndDate" });
             }

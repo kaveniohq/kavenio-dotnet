@@ -186,7 +186,7 @@ namespace Kavenio.Sdk.Model
                 // Id (string) pattern
                 Regex regexId = new Regex(@"^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]{16}$", RegexOptions.CultureInvariant);
 
-                if (this.IdOption.Value != null &&!regexId.Match(this.IdOption.Value).Success)
+                if (this.IdOption.Value != null &&!regexId.Match(this.IdOption.Value.ToString()).Success)
                 {
                     yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Id, must match a pattern of " + regexId, new [] { "Id" });
                 }
@@ -208,7 +208,7 @@ namespace Kavenio.Sdk.Model
                 // QueueId (string) pattern
                 Regex regexQueueId = new Regex(@"^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]{16}$", RegexOptions.CultureInvariant);
 
-                if (this.QueueIdOption.Value != null &&!regexQueueId.Match(this.QueueIdOption.Value).Success)
+                if (this.QueueIdOption.Value != null &&!regexQueueId.Match(this.QueueIdOption.Value.ToString()).Success)
                 {
                     yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for QueueId, must match a pattern of " + regexQueueId, new [] { "QueueId" });
                 }

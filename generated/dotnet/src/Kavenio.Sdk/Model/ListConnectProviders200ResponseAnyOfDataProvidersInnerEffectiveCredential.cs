@@ -645,7 +645,7 @@ namespace Kavenio.Sdk.Model
                 // CredentialId (string) pattern
                 Regex regexCredentialId = new Regex(@"^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]{16}$", RegexOptions.CultureInvariant);
 
-                if (this.CredentialIdOption.Value != null &&!regexCredentialId.Match(this.CredentialIdOption.Value).Success)
+                if (this.CredentialIdOption.Value != null &&!regexCredentialId.Match(this.CredentialIdOption.Value.ToString()).Success)
                 {
                     yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CredentialId, must match a pattern of " + regexCredentialId, new [] { "CredentialId" });
                 }
